@@ -5,8 +5,6 @@ import Link from 'next/link'
 import NavigationLink from '@/src/entities/navigation-link'
 import * as motion from 'motion/react-client'
 
-type Props = {}
-
 const Navigation = () => {
   return (
   <div>

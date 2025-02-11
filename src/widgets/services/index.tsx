@@ -33,14 +33,14 @@ const Services = () => {
         <h2 className="text-[#2D3941] mt-2 uppercase font-bold text-3xl">
           Комплексные решения
         </h2>
-        <div className="bg-[#558D94] h-[2px] w-7 mt-2"></div>
+        <div className="bg-[#558D94] h-[2px] w-7 mt-2" />
         <p className="mt-6">
           Для модернизации железнодорожной инфраструктуры
         </p>
       </div>
       <div className="w-full col-span-2 grid grid-cols-2 gap-5 items-stretch justify-evenly auto-rows-[1fr]">
         {data.map((item, index) => (
-          <ServiceItem icon={item.icon} title={item.title} label={item.label}/>
+          <ServiceItem key={index} icon={item.icon} title={item.title} label={item.label}/>
         ))}
       </div>
     </div>
