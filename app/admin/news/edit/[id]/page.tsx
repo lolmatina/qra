@@ -17,9 +17,7 @@ async function getArticle(id: string) {
 }
 
 interface PageProps {
-  params: Promise<{
-    id: string;
-  }>;
+  params: Promise<any>;
 }
 
 export default async function EditArticlePage({ params }: PageProps) {

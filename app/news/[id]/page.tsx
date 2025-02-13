@@ -45,7 +45,7 @@ async function getArticles(): Promise<{ items: NewsArticle[] }> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ id: string }> | { id: string };
+  params: Promise<any>;
 }): Promise<Metadata> {
   const resolvedParams = await params;
 
