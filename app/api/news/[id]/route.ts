@@ -5,7 +5,7 @@ import { prisma } from '@/lib/prisma';
 // GET single article
 export async function GET(
   _request: Request, 
-  context: { params: Promise<any> | undefined }
+  context: { params: Promise<any> }
 ) {
   const params = await context.params;
   const { id } = params;
@@ -28,7 +28,7 @@ export async function GET(
 // UPDATE article
 export async function PUT(
   request: Request, 
-  context: { params: Promise<any> | undefined }
+  context: { params: Promise<any> }
 ) {
   const params = await context.params;
   const { id } = params;
@@ -55,7 +55,7 @@ export async function PUT(
 // DELETE article
 export async function DELETE(
   _request: Request, 
-  context: { params: Promise<any> | undefined }
+  context: { params: Promise<any> }
 ) {
   const params = await context.params;
   const { id } = params;
