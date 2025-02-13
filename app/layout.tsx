@@ -1,4 +1,4 @@
-import '@/app/globals.css'
+import '@/app/globals.css';
 import '@mantine/core/styles.css';
 
 import React from 'react';
@@ -19,7 +19,10 @@ export default function RootLayout({ children }: { children: any }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         {/* @ts-ignore */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"></link>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
         <link
           rel="stylesheet"
           type="text/css"
@@ -36,7 +39,7 @@ export default function RootLayout({ children }: { children: any }) {
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
       </head>
-      <body className='bg-[#F5F5F5] font-montserrat'>
+      <body className="bg-[#F5F5F5] font-montserrat">
         <MantineProvider theme={theme}>{children}</MantineProvider>
       </body>
     </html>

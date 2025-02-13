@@ -1,25 +1,35 @@
 'use client';
 
 import { useState } from 'react';
-import dynamic from 'next/dynamic';
-import { Button, Textarea, TextInput } from '@mantine/core';
 import { useForm } from '@mantine/form';
-
 import 'react-quill/dist/quill.snow.css';
+import { TextInput, Textarea, Button } from '@mantine/core';
+import dynamic from 'next/dynamic';
 
-// Import Quill dynamically to avoid SSR issues
 const ReactQuill = dynamic(() => import('react-quill-new'), {
   ssr: false,
-  loading: () => <div className="h-64 w-full bg-gray-100 animate-pulse" />,
+  loading: () => <p>Loading editor...</p>,
 });
 
-export default function NewArticlePage() {
+interface ArticleData {
+  title: string;
+  summary: string;
+  content: string;
+  preview_image: string;
+}
+
+interface EditArticleFormProps {
+  initialData: ArticleData;
+  articleId: string;
+}
+
+export default function EditArticleForm({ initialData, articleId }: EditArticleFormProps) {
   const form = useForm({
     initialValues: {
-      title: '',
-      summary: '',
-      content: '',
-      preview_image: '',
+      title: initialData.title,
+      summary: initialData.summary,
+      content: initialData.content,
+      preview_image: initialData.preview_image,
     },
   });
 
@@ -41,8 +51,8 @@ export default function NewArticlePage() {
     setMessage('');
 
     try {
-      const response = await fetch('/api/news', {
-        method: 'POST',
+      const response = await fetch(`/api/news/${articleId}`, {
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -53,13 +63,12 @@ export default function NewArticlePage() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to create article');
+        throw new Error('Failed to update article');
       }
 
-      setMessage('Article created successfully!');
-      form.reset();
+      setMessage('Статья обновлена успешно!');
     } catch (error) {
-      setMessage('Error creating article. Please try again.');
+      setMessage('Ошибка при обновлении статьи');
     } finally {
       setIsSubmitting(false);
     }
@@ -67,7 +76,7 @@ export default function NewArticlePage() {
 
   return (
     <div className="container mx-auto py-8 px-4">
-      <h1 className="text-3xl font-bold mb-8">Create New Article</h1>
+      <h1 className="text-3xl font-bold mb-8">Обновить статью</h1>
 
       {message && (
         <div
@@ -133,9 +142,9 @@ export default function NewArticlePage() {
           loading={isSubmitting}
           className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 disabled:bg-blue-300"
         >
-          {isSubmitting ? 'Creating...' : 'Create Article'}
+          {isSubmitting ? 'Отправка...' : 'Обновить статью'}
         </Button>
       </form>
     </div>
   );
-}
+} 
