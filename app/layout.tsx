@@ -7,6 +7,8 @@ import { theme } from '../theme';
 export const metadata = {
   title: 'QazRailAutomatic | Qaz Rail Automatic | Каз Рейл Автоматик',
   description: 'Микропроцессорная автоматизация железнодорожного транспорта',
+  keywords: 'QazRailAutomatic, Qaz Rail Automatic, Каз Рейл Автоматик, микропроцессорная автоматизация железнодорожного транспорта',
+  robots: 'index, follow',
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
