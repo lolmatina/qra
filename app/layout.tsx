@@ -1,13 +1,21 @@
 import '@/app/globals.css';
 import '@mantine/core/styles.css';
-
 import React from 'react';
 import { ColorSchemeScript, mantineHtmlProps, MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'QazRailAutomatic | Qaz Rail Automatic | Каз Рейл Автоматик',
+  description: 'Микропроцессорная автоматизация железнодорожного транспорта',
+  openGraph: {
+    type: 'website',
+    locale: 'ru_RU',
+    url: 'https://new.qazrailautomatic.kz/',
+    site_name: 'QazRailAutomatic',
+  },
+  twitter: {
+    cardType: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -38,6 +46,8 @@ export default function RootLayout({ children }: { children: any }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
         />
+        <meta name="robots" content="index, follow" />
+        <meta name="google-site-verification" content="your-verification-code" />
       </head>
       <body className="bg-[#F5F5F5] font-montserrat">
         <MantineProvider theme={theme}>{children}</MantineProvider>
