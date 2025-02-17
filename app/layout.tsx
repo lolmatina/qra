@@ -24,6 +24,7 @@ export default function RootLayout({ children }: { children: any }) {
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/favicon.svg" />
+        <meta name="google-site-verification" content="LYvI6hFNGkxIB90I0r2-CV5ntLPtxvcDP3zow4c1wIs" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         {/* @ts-ignore */}
         <link rel="preconnect" href="https://fonts.gstatic.com" />
