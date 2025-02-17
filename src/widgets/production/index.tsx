@@ -1,7 +1,10 @@
 const Production = () => {
     return (
       <div id="about" className="flex flex-row-reverse w-full">
-        <div className="w-full bg-[url(/about.jpg)] bg-cover bg-no-repeat bg-center"/>
+        <div className="w-full relative">
+          <div className="w-full h-full bg-[url(/ipu.png)] bg-cover bg-no-repeat bg-center"/>
+          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10"/>
+        </div>
         <div className="w-full">
           <div className="bg-[#7A2220]">
             <div className="p-[73px] pb-[120px] max-w-[768px] mr-auto">
