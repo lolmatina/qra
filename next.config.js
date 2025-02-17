@@ -1,3 +1,4 @@
 const nextConfig = {
-  transpilePackages: ['react-quill']
+  transpilePackages: ['react-quill'],
+  exportTrailingSlash: true
 }; 
